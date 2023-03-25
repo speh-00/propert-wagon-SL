@@ -6,7 +6,15 @@ import requests
 # Property Wagon - HDB resale prices
 '''
 
-# INTERACTIVE MAP?
+# CHANGE TO INTERACTIVE MAP?
+
+def get_map_data():
+    return pd.DataFrame(
+            np.random.randn(1000, 2) / [50, 50] + [1.368, 103.796],
+            columns=['lat', 'lon']
+        )
+df = get_map_data()
+st.map(df)
 
 '''
 ### TELL US ABOUT THE HDB YOU ARE INTERESTED IN
