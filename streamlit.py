@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import requests
 
+st.set_page_config(layout="wide")
+col1, col2 = st.beta_columns(2)
+
 '''
 # Property Wagon - HDB resale prices
 '''
