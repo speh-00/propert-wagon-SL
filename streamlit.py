@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 st.set_page_config(layout="wide")
-col1, col2 = st.beta_columns((1, 4))
+col1, col2 = st.beta_columns((1, 5))
 
 col1.write("Tell us about the HDB \n you are interested in")
 
