@@ -24,7 +24,7 @@ with st.sidebar.form(key='params_for_api'):
     address = st.text_input('Address', 'Enter Address')
     flat_type = st.selectbox('Select number of rooms', df_flat_type['flat_type'])
     storey_range = st.selectbox('Select level of flat', df_storey_range['storey_range'])
-    submit_button = st.sidebar.form_submit_button('SUBMIT')
+    submit_button = st.form_submit_button('SUBMIT')
 
 #     if st.form_submit_button('SUBMIT'):
 #         # Make API call and display results in main section
