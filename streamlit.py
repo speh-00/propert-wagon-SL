@@ -19,11 +19,11 @@ with st.form(key='params_for_api'):
     storey_range = st.sidebar.selectbox('Select level of flat', df_storey_range['storey_range'])
     st.sidebar.form_submit_button('SUBMIT')
 
-#     if st.form_submit_button('SUBMIT'):
-#         # Make API call and display results in col2
-#         response = requests.get(f"https://some-api.com?address={address}&flat_type={flat_type}&storey_range={storey_range}")
-#         result = response.json()
-#         col2.write(result)
+    if st.form_submit_button('SUBMIT'):
+        # Make API call and display results in main section
+        response = requests.get(f"https://some-api.com?address={address}&flat_type={flat_type}&storey_range={storey_range}")
+        result = response.json()
+        st.write('result')
         
         
         
