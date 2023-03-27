@@ -41,7 +41,7 @@ st.sidebar.subheader('Nearby Amenities - within 1km')
         
         
 # st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
-
+@st.cache
 def get_map_data():
     return pd.DataFrame(
             np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
