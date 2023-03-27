@@ -4,11 +4,11 @@ import requests
 
 st.set_page_config(layout="wide")
 
-st.title('Property Wagon - HDB resale prices /n')
+st.title('Property Wagon - HDB resale prices \n')
 
 # ADD INTERACTIVE MAP?
 
-st.sidebar.header('Tell us about the HDB' \n 'you are interested in')
+st.sidebar.header('Tell us about the HDB \n you are interested in')
 
 with st.form(key='params_for_api'):
     df_flat_type = pd.DataFrame({'flat_type': ['1 ROOM', '2 ROOM', '3 ROOM', '4 ROOM', '5 ROOM', 'EXECUTIVE', 'MULTI-GENERATION']})
