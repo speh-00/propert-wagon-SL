@@ -6,17 +6,6 @@ st.set_page_config(layout="wide")
 
 st.title('Property Wagon - HDB resale prices')
 
-def get_map_data():
-
-    return pd.DataFrame(
-            np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-            columns=['lat', 'lon']
-        )
-
-df = get_map_data()
-
-st.map(df)
-
 
 # Add background color to sidebar
 st.markdown(
@@ -52,6 +41,13 @@ st.sidebar.subheader('Nearby Amenities - within 1km')
         
         
 # st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
+
+def get_map_data():
+    return pd.DataFrame(
+            np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+            columns=['lat', 'lon'])
+df = get_map_data()
+st.map(df)
 
 # st.subtitle('ADD PREDICTED PRICE WITH FORECAST CHART')
 
