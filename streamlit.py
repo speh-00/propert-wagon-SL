@@ -5,7 +5,7 @@ import requests
 st.set_page_config(layout="wide")
 col1, col2 = st.beta_columns((1, 2))
 
-col1.write("Tell us about the HDB\nyou are interested in")
+col1.write("Tell us about the HDB \n you are interested in")
 
 with st.form(key='params_for_api'):
 
@@ -21,6 +21,11 @@ with st.form(key='params_for_api'):
   
   
 col2.header("Property Wagon - HDB resale prices")  
+
+
+# Add CSS styling to the columns
+col1.beta_container().css("background-color: red; border: 2px solid white;")
+col2.beta_container().css("background-color: blue; border: 2px solid green;")
 
 
 
