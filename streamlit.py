@@ -5,23 +5,25 @@ import requests
 st.set_page_config(layout="wide")
 col1, col2 = st.beta_columns((1, 5))
 
-col1.write("Tell us about the HDB \n you are interested in")
+with col1:
+    st.write("Tell us about the HDB \n you are interested in")
 
-with st.form(key='params_for_api'):
+    with st.form(key='params_for_api'):
+        df_flat_type = pd.DataFrame({'flat_type': ['1 ROOM', '2 ROOM', '3 ROOM', '4 ROOM', '5 ROOM', 'EXECUTIVE', 'MULTI-GENERATION']})
+        df_storey_range = pd.DataFrame({'storey_range': ['01 TO 03', '04 TO 06', '07 TO 09', '10 TO 12', '13 TO 15', '16 TO 18', '19 TO 21', '22 TO 24', '25 TO 27', '28 TO 30', '31 TO 33', '34 TO 36', '37 TO 39', '40 TO 42', '43 TO 45', '46 TO 48', '49 TO 51']})
 
-  df_flat_type = pd.DataFrame({'flat_type': ['1 ROOM', '2 ROOM', '3 ROOM', '4 ROOM', '5 ROOM', 'EXECUTIVE', 'MULTI-GENERATION']})
-  df_storey_range = pd.DataFrame({'storey_range': ['01 TO 03', '04 TO 06', '07 TO 09', '10 TO 12', '13 TO 15', '16 TO 18', '19 TO 21', '22 TO 24', '25 TO 27', '28 TO 30', '31 TO 33', '34 TO 36', '37 TO 39', '40 TO 42', '43 TO 45', '46 TO 48', '49 TO 51']})
-  
-  address = col1.text_input('', 'Enter Address')
-  flat_type = col1.selectbox('Select number of rooms', df_flat_type['flat_type'])
-  df_storey_range = col1.selectbox('Select level of flat', df_storey_range['storey_range'])
-  
-  col1.form_submit_button('SUBMIT')
+        address = st.text_input('', 'Enter Address')
+        flat_type = st.selectbox('Select number of rooms', df_flat_type['flat_type'])
+        storey_range = st.selectbox('Select level of flat', df_storey_range['storey_range'])
 
-  
-  
-col2.header("Property Wagon - HDB resale prices")  
+        if st.form_submit_button('SUBMIT'):
+            # Make API call and display results in col2
+            response = requests.get(f"https://some-api.com?address={address}&flat_type={flat_type}&storey_range={storey_range}")
+            result = response.json()
+            col2.write(result)
 
+with col2:
+    col2.header("Property Wagon - HDB resale prices")
 
 # Add CSS styling to the columns
 col1.beta_container().css("background-color: red; border: 2px solid white;")
