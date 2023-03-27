@@ -18,9 +18,11 @@ with st.form(key='params_for_api'):
   
   col1.form_submit_button('SUBMIT')
 
-'''
-# Property Wagon - HDB resale prices
-'''
+  
+  
+col2.write("Property Wagon - HDB resale prices")  
+
+
 
 # CHANGE TO INTERACTIVE MAP?
 
@@ -32,10 +34,8 @@ with st.form(key='params_for_api'):
 # df = get_map_data()
 # st.map(df)
 
-'''
-### TELL US ABOUT THE HDB YOU ARE INTERESTED IN
-'''
-columns = st.columns(3)
+
+
 
 
 
