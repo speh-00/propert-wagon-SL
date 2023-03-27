@@ -4,12 +4,7 @@ import requests
 
 st.set_page_config(layout="wide")
 
-'''
 st.title('Property Wagon - HDB resale prices')
-'''
-
-
-
 
 st.sidebar.header('Tell us about the HDB you are interested in')
 
