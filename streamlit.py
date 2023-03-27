@@ -6,6 +6,18 @@ st.set_page_config(layout="wide")
 
 st.title('Property Wagon - HDB resale prices')
 
+# Add background color to sidebar
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #FF0000;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.sidebar.header('Tell us about the HDB you are interested in')
 
 with st.sidebar.form(key='params_for_api'):
