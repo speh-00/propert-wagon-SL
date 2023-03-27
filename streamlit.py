@@ -7,11 +7,7 @@ st.set_page_config(layout="wide")
 '''
 st.title('Property Wagon - HDB resale prices')
 '''
-st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
 
-st.subtitle('ADD PREDICTED PRICE WITH FORECAST CHART')
-
-st.subtitle('ADD LEASE DECAY WITH AVG RENTAL DATA FOR PAST 1 YEAR')
 
 
 
@@ -36,7 +32,11 @@ st.sidebar.subheader('Nearby Amenities - within 1km')
         
         
         
+# st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
 
+# st.subtitle('ADD PREDICTED PRICE WITH FORECAST CHART')
+
+# st.subtitle('ADD LEASE DECAY WITH AVG RENTAL DATA FOR PAST 1 YEAR')
 
 
 
