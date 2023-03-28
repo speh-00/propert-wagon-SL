@@ -37,10 +37,10 @@ if submit_button:
 #         response = requests.get(f"https://some-api.com?address={address}&flat_type={flat_type}&storey_range={storey_range}")
 #         result = response.json()
     
-    st.sidebar.write('API for nearest train station and distance from location)
-    st.sidebar.write('API for nearest mall and distance from location)
-    st.sidebar.write('API for nearest hawker and distance from location)
-    st.sidebar.write('API for nearest school and distance from location)
+    st.sidebar.write('API for nearest train station and distance from location')
+    st.sidebar.write('API for nearest mall and distance from location')
+    st.sidebar.write('API for nearest hawker and distance from location')
+    st.sidebar.write('API for nearest school and distance from location')
                      
         
         
