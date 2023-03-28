@@ -4,6 +4,14 @@ import requests
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
 
+def geo(address):
+    req = requests.get('https://developers.onemap.sg/commonapi/search?searchVal='+address+'&returnGeom=Y&getAddrDetails=Y&pageNum=1')
+    train = 'api nearest train and distance'
+    mall = 'api nearest mall and distance'
+    hawker = 'api nearest hawker and distance'
+    school = 'api nearest school and distance'
+    return (train, mall, hawker, school)
+
 st.sidebar.header('Tell us about the HDB you are interested in')
 
 df_flat_type = pd.DataFrame({'flat_type': ['1 ROOM', '2 ROOM', '3 ROOM', '4 ROOM', '5 ROOM', 'EXECUTIVE', 'MULTI-GENERATION']})
@@ -22,10 +30,10 @@ if submit_button:
 #         response = requests.get(f"https://some-api.com?address={address}&flat_type={flat_type}&storey_range={storey_range}")
 #         result = response.json()
     
-    st.sidebar.write('API for nearest train station and distance from location')
-    st.sidebar.write('API for nearest mall and distance from location')
-    st.sidebar.write('API for nearest hawker and distance from location')
-    st.sidebar.write('API for nearest school and distance from location')
+    st.sidebar.write(train)
+    st.sidebar.write(mall)
+    st.sidebar.write(hawker)
+    st.sidebar.write(school)
                      
         
         
