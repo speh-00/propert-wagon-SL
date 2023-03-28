@@ -5,7 +5,8 @@ st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
 
 def geo(address):
-    req = requests.get('https://developers.onemap.sg/commonapi/search?searchVal='+address+'&returnGeom=Y&getAddrDetails=Y&pageNum=1')
+    response = requests.get('https://developers.onemap.sg/commonapi/search?searchVal='+address+'&returnGeom=Y&getAddrDetails=Y&pageNum=1')
+    result = response.json()
     train = 'api nearest train and distance'
     mall = 'api nearest mall and distance'
     hawker = 'api nearest hawker and distance'
