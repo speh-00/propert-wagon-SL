@@ -1,23 +1,8 @@
 import streamlit as st
 import pandas as pd
 import requests
-
 st.set_page_config(layout="wide")
-
 st.title('Property Wagon - HDB resale prices')
-
-
-# Add background color to sidebar
-st.markdown(
-    """
-    <style>
-    .sidebar .sidebar-content {
-        background-color: #FADBD8;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 st.sidebar.header('Tell us about the HDB you are interested in')
 
