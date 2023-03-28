@@ -29,7 +29,7 @@ flat_type = st.sidebar.selectbox('Select number of rooms', df_flat_type['flat_ty
 storey_range = st.sidebar.selectbox('Select level of flat', df_storey_range['storey_range'])
 submit_button = st.sidebar.button('SUBMIT')
 
-st.sidebar.subheader('Nearby Amenities')
+st.sidebar.header('Nearby Amenities')
 
 if submit_button:
     
