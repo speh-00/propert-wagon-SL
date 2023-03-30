@@ -1,22 +1,24 @@
 import streamlit as st
 import pandas as pd
 import requests
+import numpy as np
+
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
 
-let taxiFareApiUrl = 'https://taxifare.lewagon.ai/predict'; // replace with your API endpoint
-const centralCoordinates = [1.290270, 103.851959]; // starting position [lng, lat]
+# let taxiFareApiUrl = 'https://taxifare.lewagon.ai/predict'; // replace with your API endpoint
+# const centralCoordinates = [1.290270, 103.851959]; // starting position [lng, lat]
 
-if (window.location.href.includes('https://taxifare.lewagon.com')) {
-  taxiFareApiUrl = 'https://taxifare.lewagon.ai/predict';}
-mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jva3JvYiIsImEiOiJja2YzcmcyNDkwNXVpMnRtZGwxb2MzNWtvIn0.69leM_6Roh26Ju7Lqb2pwQ';
+# if (window.location.href.includes('https://taxifare.lewagon.com')) {
+#   taxiFareApiUrl = 'https://taxifare.lewagon.ai/predict';}
+# mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jva3JvYiIsImEiOiJja2YzcmcyNDkwNXVpMnRtZGwxb2MzNWtvIn0.69leM_6Roh26Ju7Lqb2pwQ';
 
-const displayMap = (start, stop) => {
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: centralCoordinates,
-    zoom: 10 // starting zoom});
+# const displayMap = (start, stop) => {
+#   const map = new mapboxgl.Map({
+#     container: 'map',
+#     style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+#     center: centralCoordinates,
+#     zoom: 10 // starting zoom});
 
 
 
@@ -49,12 +51,18 @@ if submit_button:
     mall = 'api nearest mall and distance'
     hawker = 'api nearest hawker and distance'
     school = 'api nearest school and distance'
+    supermarket = 'api nearest supermarket and distance'
     st.sidebar.write(train)
     st.sidebar.write(mall)
     st.sidebar.write(hawker)
     st.sidebar.write(school)
                      
-        
+st.subheader('Add a map') 
+def get_map_data():
+    return pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
+df = get_map_data()
+st.map(df)
+  
         
         
 # st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
