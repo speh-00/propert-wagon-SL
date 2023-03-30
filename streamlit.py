@@ -4,6 +4,19 @@ import requests
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
 
+const centralCoordinates = [1.290270, 103.851959];
+mapboxgl.accessToken = 'pk.eyJ1Ijoia3Jva3JvYiIsImEiOiJja2YzcmcyNDkwNXVpMnRtZGwxb2MzNWtvIn0.69leM_6Roh26Ju7Lqb2pwQ';
+const displayMap = (start, stop) => {
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    center: centralCoordinates,
+    zoom: 10 // starting zoom
+  })
+
+
+
+
 st.sidebar.header('Tell us about the HDB you are interested in')
 
 df_flat_type = pd.DataFrame({'flat_type': ['1 ROOM', '2 ROOM', '3 ROOM', '4 ROOM', '5 ROOM', 'EXECUTIVE', 'MULTI-GENERATION']})
