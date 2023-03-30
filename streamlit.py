@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 import numpy as np
+import leafmap.foliumap as leafmap
 
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
@@ -63,6 +64,12 @@ def get_map_data():
 df = get_map_data()
 st.map(df)
   
+    
+st.subheader('Try another map')     
+m = leafmap.Map()
+m
+        
+        
         
         
 # st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
