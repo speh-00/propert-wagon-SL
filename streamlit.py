@@ -5,7 +5,6 @@ import numpy as np
 # from streamlit_folium import folium_static
 import folium
 import os
-import pandas as pd
 
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
@@ -73,6 +72,7 @@ st.map(df)
   
     
 st.subheader('Try another map')     
+
 m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
 
 geojson_path = os.path.join("getAllPlanningarea.json")
