@@ -1,5 +1,3 @@
-pip install git+https://github.com/pallets/streamlit_folium.git
-
 import streamlit as st
 import pandas as pd
 import requests
