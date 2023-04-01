@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import requests
 import numpy as np
-import leafmap.foliumap as leafmap
 from streamlit_folium import folium_static
 import folium
 import os
