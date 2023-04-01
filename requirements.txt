@@ -1,7 +1,2 @@
 streamlit
 pandas
-requests
-numpy
-streamlit_folium 
-folium
-os
