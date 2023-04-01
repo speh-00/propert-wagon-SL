@@ -75,18 +75,18 @@ st.subheader('Try another map')
 
 m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
 
-geojson_path = os.path.join("getAllPlanningarea.json")
-resale_path = os.path.join("recent_tnx.csv")
+# geojson_path = os.path.join("getAllPlanningarea.json")
+# resale_path = os.path.join("recent_tnx.csv")
 
-for _, month in pd.read_csv(resale_path).iterrows():
+# for _, month in pd.read_csv(resale_path).iterrows():
 
-    folium.Marker(
-        location=[month.Latitude, month.Longitude],
-        popup=[month.resale_price, month.address, month.month],
-        icon=folium.Icon(color="red", icon="info-sign"),
-    ).add_to(m)
+#     folium.Marker(
+#         location=[month.Latitude, month.Longitude],
+#         popup=[month.resale_price, month.address, month.month],
+#         icon=folium.Icon(color="red", icon="info-sign"),
+#     ).add_to(m)
     
-    
+m
     
         
         
