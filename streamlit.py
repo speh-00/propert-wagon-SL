@@ -4,7 +4,7 @@ import requests
 import numpy as np
 # from streamlit_folium import folium_static
 import folium
-import os
+# import os
 
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
@@ -49,11 +49,11 @@ def geo(address):
     return (train, mall, hawker, school)
 
 if submit_button:
-    
+
 #         # Make API call and display results in main section
 #         response = requests.get(f"https://some-api.com?address={address}&flat_type={flat_type}&storey_range={storey_range}")
 #         result = response.json()
-    
+
     train = 'api nearest train and distance'
     mall = 'api nearest mall and distance'
     hawker = 'api nearest hawker and distance'
@@ -63,47 +63,40 @@ if submit_button:
     st.sidebar.write(mall)
     st.sidebar.write(hawker)
     st.sidebar.write(school)
-                     
-st.subheader('Add a map') 
+
+st.subheader('Add a map')
 # def get_map_data():
 #     return pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
 # df = get_map_data()
 # st.map(df)
-  
-    
-st.subheader('Try another map')     
+
+
+st.subheader('Try another map')
 
 recent_tnx = pd.read_csv('data/recent_tnx.csv')
 recent_tnx = recent_tnx[["Latitude", "Longitude", "flat_type", "resale_price"]]
-
 map = folium.Map(location=[1.366857283359732, 103.80991775977628], zoom_start=12, control_scale=True)
-
 for index, location_info in recent_tnx.iterrows():
-    folium.Marker([location_info["Latitude"], 
-                   location_info["Longitude"]], 
+    folium.Marker([location_info["Latitude"],
+                   location_info["Longitude"]],
                   popup=location_info[["flat_type", "resale_price"]]).add_to(map)
-    
 st.map
 
-
 # m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
-
 # geojson_path = os.path.join("getAllPlanningarea.json")
 # resale_path = os.path.join("recent_tnx.csv")
-
 # for _, month in pd.read_csv(resale_path).iterrows():
-
 #     folium.Marker(
 #         location=[month.Latitude, month.Longitude],
 #         popup=[month.resale_price, month.address, month.month],
 #         icon=folium.Icon(color="red", icon="info-sign"),
 #     ).add_to(m)
-    
 
-    
-        
-        
-        
+m
+
+
+
+
 # st.subtitle('ADD INTERACTIVE MAP SHOwING RESALE TRANSACTIONS IN PAST 12 MONTHS WITHIN 5KM')
 # @st.cache
 # def get_map_data():
