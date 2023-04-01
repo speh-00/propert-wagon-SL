@@ -73,7 +73,20 @@ st.map(df)
     
 st.subheader('Try another map')     
 
-m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
+recent_tnx = pd.read_csv('data/recent_tnx.csv')
+recent_tnx = recent_tnx[["Latitude", "Longitude", "flat_type", "resale_price"]]
+
+m = folium.Map(location=[1.366857283359732, 103.80991775977628], zoom_start=12, control_scale=True)
+
+for index, location_info in recent_tnx.iterrows():
+    folium.Marker([location_info["Latitude"], 
+                   location_info["Longitude"]], 
+                  popup=location_info[["flat_type", "resale_price"]]).add_to(m)
+    
+st.m
+
+
+# m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
 
 # geojson_path = os.path.join("getAllPlanningarea.json")
 # resale_path = os.path.join("recent_tnx.csv")
@@ -86,7 +99,7 @@ m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
 #         icon=folium.Icon(color="red", icon="info-sign"),
 #     ).add_to(m)
     
-m
+
     
         
         
