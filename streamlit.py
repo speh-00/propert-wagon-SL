@@ -65,10 +65,10 @@ if submit_button:
     st.sidebar.write(school)
                      
 st.subheader('Add a map') 
-def get_map_data():
-    return pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
-df = get_map_data()
-st.map(df)
+# def get_map_data():
+#     return pd.DataFrame(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
+# df = get_map_data()
+# st.map(df)
   
     
 st.subheader('Try another map')     
@@ -76,14 +76,14 @@ st.subheader('Try another map')
 recent_tnx = pd.read_csv('data/recent_tnx.csv')
 recent_tnx = recent_tnx[["Latitude", "Longitude", "flat_type", "resale_price"]]
 
-m = folium.Map(location=[1.366857283359732, 103.80991775977628], zoom_start=12, control_scale=True)
+map = folium.Map(location=[1.366857283359732, 103.80991775977628], zoom_start=12, control_scale=True)
 
 for index, location_info in recent_tnx.iterrows():
     folium.Marker([location_info["Latitude"], 
                    location_info["Longitude"]], 
-                  popup=location_info[["flat_type", "resale_price"]]).add_to(m)
+                  popup=location_info[["flat_type", "resale_price"]]).add_to(map)
     
-st.m
+st.map
 
 
 # m = folium.Map(location=[1.290270, 103.85195], zoom_start=6)
