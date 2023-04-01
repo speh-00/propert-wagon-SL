@@ -3,7 +3,6 @@ pandas
 requests
 numpy
 streamlit_folium 
-folium_static
 folium
 os
 geopandas
