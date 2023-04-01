@@ -3,9 +3,17 @@ import pandas as pd
 import requests
 import numpy as np
 import leafmap.foliumap as leafmap
+from streamlit_folium import folium_static
+import folium
+import os
+import pandas as pd
 
 st.set_page_config(layout="wide")
 st.title('Property Wagon - HDB resale prices')
+
+
+
+
 
 # let taxiFareApiUrl = 'https://taxifare.lewagon.ai/predict'; // replace with your API endpoint
 # const centralCoordinates = [1.290270, 103.851959]; // starting position [lng, lat]
@@ -66,9 +74,9 @@ st.map(df)
   
     
 st.subheader('Try another map')     
-m = leafmap.Map()
-m
-        
+# m = folium.Map(location=[47, 1], zoom_start=6)
+# geojson_path = os.path.join("data", "departements.json")
+# town_path = os.path.join("data", "town.csv")        
         
         
         
